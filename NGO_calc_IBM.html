@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Interest Calculator</h1>
+        <div class="inpSection">
+            <div class="amt">
+                <label for="amount">Enter Total Amount:   </label>
+                <input type="number" name="amount" id="amount" placeholder="Enter Total Amount">
+            </div>
+            <div class="time">
+                <label for="time">Enter Time (year):   </label>
+                <input type="number" name="time" id="time" placeholder="Enter Time">
+            </div>
+            <div class="rate">
+                <label for="rate">Rate(%): </label>
+                <input type="number" name="rate" id="rate" placeholder="Enter Rate">
+            </div>
+            <div class="button">
+                <button onclick="Calculate()">Calculate</button>
+            </div>
+            <br>
+            <div>
+                <p>© Everyone Can Get Rich</p>
+                <p>This Calculator belongs to(Mohammad Asif)</p>
+            </div>
+            <div class="result">
+                <h3 id="si"></h3>
+            </div>
+        </div>
+    </div>
+    <style>
+        *{
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    place-items: center;
+    background: linear-gradient(90deg, rgba(179,52,178,1) 0%, rgb(211, 5, 142));
+}
+.container
+{
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(214, 202, 202, 0.05);
+    height: 500px;
+    width: 450px;
+    background :rgb(236, 129, 7)
+}
+
+.container h1
+{
+    margin: 10px;
+    color:rgb(104, 35, 3);
+}
+.inpSection{
+
+    margin: 20px 50px;
+    text-align: left;
+}
+input{
+    color: rgba(51, 45, 45, 0.5);
+    font-weight: 650;
+    outline: none;
+    border: none;
+    box-shadow: 0 2px 4px rgb(120, 4, 6,);
+    font-size: 18px;
+    padding: 15px;
+    height: 35px;
+    margin: 10px;
+    display: flex;
+    width: 20vw;
+    border-radius: 5px;
+    background-color: rgb(236, 214, 187);
+}
+.button button{
+    padding: 10px;
+    margin: 10px 110px;
+    font-size: 18px;
+    font-weight: 650;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(224, 217, 217, 0.5);
+    border-radius: 5px;
+    background-color: gold;
+}
+.result{
+    position: relative;
+    margin: 20px 0;
+}
+label{
+    font-weight: 600;
+    margin: 10px;
+    text-align: left 10px;
+}
+
+h3{
+    font-size: 20px;
+    color: rgb(13, 9, 214);
+}
+    </style>
+<script>
+    function Calculate()
+    {
+        let p=document.getElementById('amount').value;
+        let t=document.getElementById('time').value;
+        let r=document.getElementById('rate').value;
+
+        let  SI=(p*t*r)/100;
+
+        document.getElementById('si').innerHTML="The Total Simple Intrest Is: "+SI;
+    }
+</script>
+</body>
+</html>
